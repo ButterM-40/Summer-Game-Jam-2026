@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bb32ynvq0opgg"]
+
+[ext_resource type="Script" uid="uid://cj72keb661pv2" path="res://helper/scoopable.gd" id="1_2meil"]
+
+[node name="Scoopable" type="Control" unique_id=227489385]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.95996
+offset_bottom = 56.375977
+script = ExtResource("1_2meil")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=809963884]
+layout_mode = 0
+offset_right = 289.0
+offset_bottom = 130.0
+color = Color(0.05882353, 0.42745098, 0.99215686, 1)
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect" unique_id=1375421840]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="ColorRect/TextureButton" to="." method="_on_texture_button_pressed"]

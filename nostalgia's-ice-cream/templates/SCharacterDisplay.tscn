@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cbqcsum350dlx"]
+
+[ext_resource type="Script" uid="uid://brq1f16cdog01" path="res://templates/s_character_display.gd" id="1_mosd5"]
+[ext_resource type="Texture2D" uid="uid://lr3hwucc24v0" path="res://assets/C1Scarffy/CUSTOMER1_IDLE.png" id="2_o2kup"]
+
+[node name="SCharacterDisplay" type="Control" unique_id=578893990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mosd5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1342879725]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1338102354]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 368.0
+offset_bottom = 281.0
+texture = ExtResource("2_o2kup")
