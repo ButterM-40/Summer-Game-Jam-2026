@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://kkvnh13t031g"]
+
+[ext_resource type="Script" uid="uid://da0d5x56n3cs8" path="res://helper/c_player_cursor.gd" id="1_fyndt"]
+[ext_resource type="Texture2D" uid="uid://dxw7sdqfhb0eu" path="res://assets/Velvet.jpg" id="2_kmhfv"]
+[ext_resource type="Texture2D" uid="uid://fs2ncrx1pavk" path="res://assets/paradise.jpg" id="3_rlaii"]
+[ext_resource type="Texture2D" uid="uid://cmxhnkb86ajby" path="res://assets/randomGuy.png" id="4_5mrjc"]
+[ext_resource type="Texture2D" uid="uid://boefwjwahhfn0" path="res://assets/Beige.jpg" id="5_kf8lf"]
+[ext_resource type="PackedScene" uid="uid://cufsytvyiun7h" path="res://src/text_box.tscn" id="6_kmhfv"]
+
+[node name="Node" type="Node" unique_id=97460139]
+
+[node name="CPlayerCursor" type="Control" parent="." unique_id=788187655]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 73.0
+offset_bottom = 74.0
+script = ExtResource("1_fyndt")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1724349682]
+offset_left = 3.0000305
+offset_top = 3.0517578e-05
+offset_right = 1151.0
+offset_bottom = 1000.0
+texture = ExtResource("2_kmhfv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1237774155]
+offset_left = 2.0
+offset_top = 22.0
+offset_right = 1131.0
+offset_bottom = 631.0
+texture = ExtResource("3_rlaii")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1073671879]
+position = Vector2(286, 356)
+scale = Vector2(0.13509765, 0.13509765)
+texture = ExtResource("4_5mrjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1527844892]
+position = Vector2(566.99994, 537.5)
+scale = Vector2(1.1240001, 0.18100001)
+texture = ExtResource("2_kmhfv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=737847299]
+position = Vector2(-260.23123, -74.58562)
+scale = Vector2(1.8398576, 3.4254131)
+texture = ExtResource("5_kf8lf")
+
+[node name="TextBox" parent="." unique_id=33570457 instance=ExtResource("6_kmhfv")]

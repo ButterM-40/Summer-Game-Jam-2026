@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b4oaa41i5awng" path="res://helper/CPlayerCursor.tscn" id="1_xiwr3"]
 [ext_resource type="PackedScene" uid="uid://bb32ynvq0opgg" path="res://helper/Scoopable.tscn" id="2_30ivx"]
-[ext_resource type="Texture2D" uid="uid://byamrwp82xqbs" path="res://icon.svg" id="3_30ivx"]
+[ext_resource type="Texture2D" uid="uid://b1q0m4r4mwxyu" path="res://icon.svg" id="3_30ivx"]
 
 [node name="USelectGame" type="Control" unique_id=1874865665]
 layout_mode = 3

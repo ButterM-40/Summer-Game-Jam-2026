@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cufsytvyiun7h"]
+
+[ext_resource type="Script" uid="uid://w7njlf1j52p6" path="res://src/text_box.gd" id="1_sqkml"]
+[ext_resource type="FontFile" uid="uid://c43c6dax7vxch" path="res://fonts/pixel.ttf" id="2_vqffl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0wgs"]
+bg_color = Color(0.018822957, 0.07345995, 0.17104073, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.74419343, 0.8080542, 0.883169, 1)
+
+[node name="TextBox" type="CanvasLayer" unique_id=33570457]
+script = ExtResource("1_sqkml")
+
+[node name="TextBoxContainer" type="MarginContainer" parent="." unique_id=249843480]
+offset_left = 559.0
+offset_top = 36.0
+offset_right = 1107.0
+offset_bottom = 301.0
+
+[node name="Panel" type="Panel" parent="TextBoxContainer" unique_id=2060255656]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0wgs")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxContainer" unique_id=732484824]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="TextBoxContainer/MarginContainer" unique_id=235668463]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/MarginContainer" unique_id=479906963]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer" unique_id=731168229]
+texture_filter = 1
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_vqffl")
+text = "[text box]"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
