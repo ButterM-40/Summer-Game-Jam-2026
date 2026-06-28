@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bvqyvxxdrdo2w"]
+
+[ext_resource type="PackedScene" uid="uid://cbqcsum350dlx" path="res://templates/SCharacterDisplay.tscn" id="1_he7yg"]
+[ext_resource type="Script" uid="uid://d2x6v77860i8g" path="res://templates/TChangeMood.gd" id="2_h44xy"]
+[ext_resource type="Script" uid="uid://c6amipl3mupae" path="res://Test/change_animation_button.gd" id="3_h44xy"]
+
+[node name="UMain" type="Control" unique_id=1437476235]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SCharacterDisplay" parent="." unique_id=578893990 instance=ExtResource("1_he7yg")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 3.0
+
+[node name="ChangeMoodButton" type="Button" parent="." unique_id=171938464]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 125.0
+offset_right = 849.0
+offset_bottom = 214.0
+text = "Change Mood"
+script = ExtResource("2_h44xy")
+
+[node name="ChangeAnimationButton" type="Button" parent="." unique_id=902942967]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("3_h44xy")
+
+[connection signal="pressed" from="ChangeMoodButton" to="ChangeMoodButton" method="_on_pressed"]
