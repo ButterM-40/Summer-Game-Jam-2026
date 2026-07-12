@@ -1,0 +1,247 @@
+[gd_scene format=3 uid="uid://baoq2m7711y7u"]
+
+[ext_resource type="Script" uid="uid://dnkv5ip6kbphb" path="res://template.gd" id="1_dejbu"]
+[ext_resource type="Script" uid="uid://dt5t785hwf0y3" path="res://helper/ice_cream_stand.gd" id="2_stand"]
+[ext_resource type="PackedScene" path="res://helper/DraggableItem.tscn" id="3_item"]
+[ext_resource type="Texture2D" uid="uid://c5q3vs2owi8u3" path="res://assets/ice_cream_art/cone.png" id="4_cone"]
+[ext_resource type="Texture2D" uid="uid://dpp3sw1mr7pc" path="res://assets/ice_cream_art/cup.png" id="5_cup"]
+[ext_resource type="Texture2D" uid="uid://bcm4hrxejthak" path="res://assets/ice_cream_art/vanilla_scoop.png" id="6_vanilla"]
+[ext_resource type="Texture2D" uid="uid://f2tajjn4mgrn" path="res://assets/ice_cream_art/banana_scoop.png" id="7_banana"]
+[ext_resource type="Texture2D" uid="uid://hpf01pu5ib6s" path="res://assets/ice_cream_art/chocolate_scoop.png" id="8_chocolate"]
+[ext_resource type="Texture2D" uid="uid://cnpelxsp7q3d7" path="res://assets/ice_cream_art/neopolitan_scoop.png" id="9_neopolitan"]
+[ext_resource type="Texture2D" uid="uid://6b3pcetcyc1f" path="res://assets/ice_cream_art/strawberry_scoop.png" id="10_strawberry"]
+[ext_resource type="Texture2D" uid="uid://4ecb8ncapm5n" path="res://assets/ice_cream_art/toppings/cherry.png" id="11_cherry"]
+[ext_resource type="Texture2D" uid="uid://cdc4us8apyl6f" path="res://assets/ice_cream_art/toppings/sprinkles.png" id="12_sprinkles"]
+[ext_resource type="Texture2D" uid="uid://v0x8uno71spr" path="res://assets/ice_cream_art/toppings/choclates.png" id="13_choclates"]
+[ext_resource type="Texture2D" uid="uid://bma87gu76tx12" path="res://assets/ice_cream_art/toppings/gummy_bears.png" id="14_gummybears"]
+[ext_resource type="Texture2D" uid="uid://cooep6pi2f7l6" path="res://assets/ice_cream_art/toppings/marshmallows.png" id="15_marshmallows"]
+
+[sub_resource type="AtlasTexture" id="Atlas_cone"]
+atlas = ExtResource("4_cone")
+region = Rect2(410, 523, 123, 138)
+
+[sub_resource type="AtlasTexture" id="Atlas_cup"]
+atlas = ExtResource("5_cup")
+region = Rect2(58, 122, 139, 107)
+
+[sub_resource type="AtlasTexture" id="Atlas_vanilla"]
+atlas = ExtResource("6_vanilla")
+region = Rect2(402, 290, 139, 139)
+
+[sub_resource type="AtlasTexture" id="Atlas_banana"]
+atlas = ExtResource("7_banana")
+region = Rect2(402, 338, 139, 139)
+
+[sub_resource type="AtlasTexture" id="Atlas_chocolate"]
+atlas = ExtResource("8_chocolate")
+region = Rect2(402, 434, 139, 139)
+
+[sub_resource type="AtlasTexture" id="Atlas_neopolitan"]
+atlas = ExtResource("9_neopolitan")
+region = Rect2(402, 242, 139, 139)
+
+[sub_resource type="AtlasTexture" id="Atlas_strawberry"]
+atlas = ExtResource("10_strawberry")
+region = Rect2(402, 386, 139, 139)
+
+[sub_resource type="AtlasTexture" id="Atlas_cherry"]
+atlas = ExtResource("11_cherry")
+region = Rect2(56, 16, 31, 43)
+
+[sub_resource type="AtlasTexture" id="Atlas_sprinkles"]
+atlas = ExtResource("12_sprinkles")
+region = Rect2(20, 52, 103, 51)
+
+[sub_resource type="AtlasTexture" id="Atlas_choclates"]
+atlas = ExtResource("13_choclates")
+region = Rect2(21, 56, 97, 46)
+
+[sub_resource type="AtlasTexture" id="Atlas_gummybears"]
+atlas = ExtResource("14_gummybears")
+region = Rect2(24, 54, 91, 59)
+
+[sub_resource type="AtlasTexture" id="Atlas_marshmallows"]
+atlas = ExtResource("15_marshmallows")
+region = Rect2(16, 52, 107, 55)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_section"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7, 0.72, 0.78, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+
+[node name="Template" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dejbu")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9490196, 0.9490196, 0.972549, 0)
+
+[node name="Stand" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_stand")
+
+[node name="TrayPanel" type="ColorRect" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.85882354, 0.85882354, 0.8901961, 0)
+
+[node name="Scroll" type="ScrollContainer" parent="TrayPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="TrayPanel/Scroll"]
+custom_minimum_size = Vector2(304, 0)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ToppingArea" type="PanelContainer" parent="TrayPanel/Scroll/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_section")
+
+[node name="VBox" type="VBoxContainer" parent="TrayPanel/Scroll/VBox/ToppingArea"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ToppingGrid" type="GridContainer" parent="TrayPanel/Scroll/VBox/ToppingArea/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="CherryItem" parent="TrayPanel/Scroll/VBox/ToppingArea/VBox/ToppingGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_cherry")
+item_type = 2
+item_id = "cherry"
+lands_on_peak = true
+
+[node name="SprinklesItem" parent="TrayPanel/Scroll/VBox/ToppingArea/VBox/ToppingGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_sprinkles")
+item_type = 2
+item_id = "sprinkles"
+
+[node name="ChoclatesItem" parent="TrayPanel/Scroll/VBox/ToppingArea/VBox/ToppingGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_choclates")
+item_type = 2
+item_id = "chocolates"
+
+[node name="GummyBearsItem" parent="TrayPanel/Scroll/VBox/ToppingArea/VBox/ToppingGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_gummybears")
+item_type = 2
+item_id = "gummy_bears"
+
+[node name="MarshmallowsItem" parent="TrayPanel/Scroll/VBox/ToppingArea/VBox/ToppingGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_marshmallows")
+item_type = 2
+item_id = "marshmallows"
+
+[node name="ScoopArea" type="PanelContainer" parent="TrayPanel/Scroll/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_section")
+
+[node name="VBox" type="VBoxContainer" parent="TrayPanel/Scroll/VBox/ScoopArea"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ScoopGrid" type="GridContainer" parent="TrayPanel/Scroll/VBox/ScoopArea/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="VanillaItem" parent="TrayPanel/Scroll/VBox/ScoopArea/VBox/ScoopGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_vanilla")
+item_type = 1
+item_id = "vanilla"
+display_scale = 1.15
+
+[node name="BananaItem" parent="TrayPanel/Scroll/VBox/ScoopArea/VBox/ScoopGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_banana")
+item_type = 1
+item_id = "banana"
+display_scale = 1.15
+
+[node name="ChocolateItem" parent="TrayPanel/Scroll/VBox/ScoopArea/VBox/ScoopGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_chocolate")
+item_type = 1
+item_id = "chocolate"
+display_scale = 1.15
+
+[node name="NeopolitanItem" parent="TrayPanel/Scroll/VBox/ScoopArea/VBox/ScoopGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_neopolitan")
+item_type = 1
+item_id = "neopolitan"
+display_scale = 1.15
+
+[node name="StrawberryItem" parent="TrayPanel/Scroll/VBox/ScoopArea/VBox/ScoopGrid" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_strawberry")
+item_type = 1
+item_id = "strawberry"
+display_scale = 1.15
+
+[node name="BaseArea" type="PanelContainer" parent="TrayPanel/Scroll/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_section")
+
+[node name="VBox" type="VBoxContainer" parent="TrayPanel/Scroll/VBox/BaseArea"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BaseRow" type="HBoxContainer" parent="TrayPanel/Scroll/VBox/BaseArea/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ConeItem" parent="TrayPanel/Scroll/VBox/BaseArea/VBox/BaseRow" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_cone")
+item_type = 0
+item_id = "cone"
+display_scale = 1.15
+
+[node name="CupItem" parent="TrayPanel/Scroll/VBox/BaseArea/VBox/BaseRow" instance=ExtResource("3_item")]
+layout_mode = 2
+texture = SubResource("Atlas_cup")
+item_type = 0
+item_id = "cup"
+display_scale = 1.15
